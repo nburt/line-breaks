@@ -16,11 +16,17 @@ heard of them
 farm-to-table.
 
 Another line.
-    Result
+Result
 
     line_breaker = LineBreaker.new(text)
     expect(line_breaker.break_lines(20)).to eq expected
 
+  end
+
+  it 'should break of lines after 12 characters' do
+    input = "This is a sample string with characters."
+    line_breaker = LineBreaker.new(input)
+    expect(line_breaker.break_lines(12)).to eq "This is a\nsample\nstring with\ncharacters.\n"
   end
 
 end
